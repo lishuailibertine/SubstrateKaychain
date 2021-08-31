@@ -22,7 +22,7 @@ extension Mnemonic {
 public protocol KeyPair {
     var rawPubKey: Data { get }
     var raw: Data { get }
-    
+    var seed: Data? {get}
     init()
     init(phrase: String, password: String?) throws
     init(seed: Data) throws

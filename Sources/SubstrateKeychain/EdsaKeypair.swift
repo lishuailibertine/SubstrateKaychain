@@ -29,6 +29,9 @@ public struct EcdsaKeyPair {
     fileprivate static let _context = Secp256k1Context()
 }
 extension EcdsaKeyPair: KeyPair {
+    public var seed: Data? {
+        Data(privateData)
+    }
     public var rawPubKey: Data { publicRaw }
     public var raw: Data { Data(privateData) + rawPubKey }
 

@@ -18,7 +18,7 @@ public typealias EDPublicKey = Ed25519.Ed25519PublicKey
 
 public struct Ed25519KeyPair {
     public let keyPair: EDKeyPair
-    
+    public var edSeed: EDSeed? = nil
     private init(keyPair: EDKeyPair) {
         self.keyPair = keyPair
     }
@@ -44,6 +44,9 @@ public struct Ed25519KeyPair {
     }
 }
 extension Ed25519KeyPair: KeyPair {
+    public var seed: Data? {
+        edSeed?.raw
+    }
     public var rawPubKey: Data { keyPair.publicKey.raw }
     public var raw: Data { keyPair.raw }
  
@@ -60,6 +63,7 @@ extension Ed25519KeyPair: KeyPair {
             try EDSeed(raw: seed.prefix(EDSeed.size))
         }
         self.init(keyPair: EDKeyPair(seed: kpSeed))
+        self.edSeed = kpSeed
     }
     
     public init() {

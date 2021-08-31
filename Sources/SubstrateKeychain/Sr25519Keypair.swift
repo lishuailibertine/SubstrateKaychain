@@ -18,6 +18,7 @@ public typealias SRPublicKey = Sr25519.Sr25519PublicKey
 
 public struct Sr25519KeyPair {
     public let keyPair: SRKeyPair
+    public var srSeed: SRSeed? = nil
     private init(keyPair: SRKeyPair) {
         self.keyPair = keyPair
     }
@@ -49,7 +50,7 @@ public struct Sr25519KeyPair {
 extension Sr25519KeyPair: KeyPair {
     public var raw: Data { keyPair.raw }
     public var rawPubKey: Data { keyPair.publicKey.raw }
-    
+    public var seed: Data? {srSeed?.raw}
     public init(phrase: String, password: String? = nil) throws {
         let mnemonic = try Self.convertError {
             try Mnemonic(mnemonic: phrase.components(separatedBy: " "), wordlist: .english)
@@ -59,10 +60,14 @@ extension Sr25519KeyPair: KeyPair {
     }
     
     public init(seed: Data) throws {
+        let kpSeed = try Self.convertError {
+            try SRSeed(raw: seed.prefix(SRSeed.size))
+        }
         let kp = try Self.convertError {
-            try SRKeyPair(seed: SRSeed(raw: seed.prefix(SRSeed.size)))
+             SRKeyPair(seed: kpSeed)
         }
         self.init(keyPair: kp)
+        self.srSeed = kpSeed
     }
     
     public init(raw: Data) throws {
