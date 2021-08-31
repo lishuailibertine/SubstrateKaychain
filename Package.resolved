@@ -1,0 +1,79 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BigInt",
+        "repositoryURL": "https://github.com/attaswift/BigInt.git",
+        "state": {
+          "branch": null,
+          "revision": "889a1ecacd73ccc189c5cb29288048f186c44ed9",
+          "version": "5.2.1"
+        }
+      },
+      {
+        "package": "Bip39",
+        "repositoryURL": "https://github.com/tesseract-one/Bip39.swift",
+        "state": {
+          "branch": null,
+          "revision": "ac728b82520e93a17deb1c2af2c9c952274db703",
+          "version": "0.1.1"
+        }
+      },
+      {
+        "package": "Blake2",
+        "repositoryURL": "https://github.com/tesseract-one/Blake2.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "106f68231100021e1f745779e241f81a065ad0de",
+          "version": "0.1.2"
+        }
+      },
+      {
+        "package": "CSecp256k1",
+        "repositoryURL": "https://github.com/tesseract-one/CSecp256k1.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "eeaa0df1eef8f5ff4214ae716cf844cb75874e96",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "Sr25519",
+        "repositoryURL": "https://github.com/tesseract-one/Sr25519.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "d611e002653f4538c3df8feb0fa6e5dd59238f45",
+          "version": "0.1.3"
+        }
+      },
+      {
+        "package": "swift-scale-codec",
+        "repositoryURL": "https://github.com/tesseract-one/swift-scale-codec.git",
+        "state": {
+          "branch": null,
+          "revision": "bd39b2d68d87126a61b62a071ee4c065e2a1fe30",
+          "version": "0.2.1"
+        }
+      },
+      {
+        "package": "UncommonCrypto",
+        "repositoryURL": "https://github.com/tesseract-one/UncommonCrypto.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "e089407582e1f2d81dc11ba167362742422b8979",
+          "version": "0.1.3"
+        }
+      },
+      {
+        "package": "xxHash-Swift",
+        "repositoryURL": "https://github.com/daisuke-t-jp/xxHash-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "1fbd877ba76e9b0b6611f4b2d3d02adb254bb4bd",
+          "version": "1.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
