@@ -8,6 +8,7 @@
 import Foundation
 import Sr25519
 import Bip39
+import ScaleCodec
 
 public typealias SRKeyPair = Sr25519.Sr25519KeyPair
 public typealias SRSeed = Sr25519.Sr25519Seed

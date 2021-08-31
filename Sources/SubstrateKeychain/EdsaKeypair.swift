@@ -8,6 +8,7 @@
 import Foundation
 import CSecp256k1
 import Bip39
+import ScaleCodec
 
 public struct EcdsaKeyPair {
     public let privateData: [UInt8]
@@ -75,4 +76,19 @@ extension EcdsaKeyPair: KeyPair {
     }
     
     public static var seedLength: Int = Secp256k1Context.privKeySize
+}
+extension EcdsaKeyPair: KeyDerivable {
+    public func derive(path: [PathComponent]) throws -> EcdsaKeyPair {
+        let priv = try path.reduce(privateData) { (secret, cmp) in
+            guard cmp.isHard else { throw KeyPairError.derive(error: .softDeriveIsNotSupported) }
+            let encoder = SCALE.default.encoder()
+            try encoder.encode("Secp256k1HDKD")
+            try encoder.encode(Data(secret), .fixed(UInt(Secp256k1Context.privKeySize)))
+            try encoder.encode(cmp.bytes, .fixed(UInt(PathComponent.size)))
+            let hash = HBlake2b256.hasher.hash(data: encoder.output)
+            return Array(hash.prefix(Secp256k1Context.privKeySize))
+        }
+        
+        return try Self(privKey: priv)
+    }
 }
