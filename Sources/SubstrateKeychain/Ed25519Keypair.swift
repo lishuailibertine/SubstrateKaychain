@@ -19,7 +19,7 @@ public typealias EDPublicKey = Ed25519.Ed25519PublicKey
 public struct Ed25519KeyPair {
     public let keyPair: EDKeyPair
     public var edSeed: EDSeed? = nil
-    private init(keyPair: EDKeyPair) {
+    public init(keyPair: EDKeyPair) {
         self.keyPair = keyPair
     }
     fileprivate static func convertError<T>(_ cb: () throws -> T) throws -> T {

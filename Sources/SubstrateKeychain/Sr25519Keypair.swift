@@ -19,7 +19,7 @@ public typealias SRPublicKey = Sr25519.Sr25519PublicKey
 public struct Sr25519KeyPair {
     public let keyPair: SRKeyPair
     public var srSeed: SRSeed? = nil
-    private init(keyPair: SRKeyPair) {
+    public init(keyPair: SRKeyPair) {
         self.keyPair = keyPair
     }
     fileprivate static func convertError<T>(_ cb: () throws -> T) throws -> T {

@@ -15,7 +15,7 @@ public struct EcdsaKeyPair {
     public let publicKey: secp256k1_pubkey
     public let publicRaw: Data
     
-    private init(privKey: [UInt8]) throws {
+    public init(privKey: [UInt8]) throws {
         guard Self._context.verify(privKey: privKey) else {
             throw KeyPairError.native(error: .badPrivateKey)
         }
