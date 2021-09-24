@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Bip39
+import BIP39swift
 import ScaleCodec
 import Ed25519
 import Sr25519
@@ -52,7 +52,7 @@ extension Ed25519KeyPair: KeyPair {
  
     public init(phrase: String, password: String? = nil) throws {
         let mnemonic = try Self.convertError {
-            try Mnemonic(mnemonic: phrase.components(separatedBy: " "))
+            try Mnemonic(mnemonic: phrase, wordlist: .english)
         }
         let seed = mnemonic.substrate_seed(password: password ?? "")
         try self.init(seed: Data(seed))

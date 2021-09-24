@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Bip39
+import BIP39swift
 
 public enum KeyPairError: Error {
     public enum SecretParsing: Error {

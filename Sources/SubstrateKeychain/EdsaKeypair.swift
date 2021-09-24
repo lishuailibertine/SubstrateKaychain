@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import CSecp256k1
-import Bip39
+import Secp256k1Swift
+import BIP39swift
 import ScaleCodec
 
 public struct EcdsaKeyPair {
@@ -38,7 +38,7 @@ extension EcdsaKeyPair: KeyPair {
     public init(phrase: String, password: String? = nil) throws {
         let mnemonic: Mnemonic
         do {
-            mnemonic = try Mnemonic(mnemonic: phrase.components(separatedBy: " "))
+            mnemonic = try Mnemonic(mnemonic: phrase, wordlist: .english)
         } catch {
             throw KeyPairError(error: error)
         }

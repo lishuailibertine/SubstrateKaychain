@@ -7,7 +7,7 @@
 
 import Foundation
 import Sr25519
-import Bip39
+import BIP39swift
 import ScaleCodec
 
 public typealias SRKeyPair = Sr25519.Sr25519KeyPair
@@ -53,7 +53,7 @@ extension Sr25519KeyPair: KeyPair {
     public var seed: Data? {srSeed?.raw}
     public init(phrase: String, password: String? = nil) throws {
         let mnemonic = try Self.convertError {
-            try Mnemonic(mnemonic: phrase.components(separatedBy: " "), wordlist: .english)
+            try Mnemonic(mnemonic: phrase, wordlist: .english)
         }
         let seed = mnemonic.substrate_seed(password: password ?? "")
         try self.init(seed: Data(seed))

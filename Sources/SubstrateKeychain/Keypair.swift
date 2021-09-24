@@ -7,15 +7,15 @@
 
 import Foundation
 import Sr25519
-import Bip39
-import UncommonCrypto
+import BIP39swift
+import CryptoSwift
 
 public typealias SubstrateKeychainRandom = Sr25519SecureRandom
 
 extension Mnemonic {
     public func substrate_seed(password: String = "") -> [UInt8] {
         let salt = Array(("mnemonic"+password).utf8)
-        return try! PBKDF2.derive(type: .sha512, password: self.entropy, salt: salt, iterations: 2048, keyLength: 64)
+        return try! PKCS5.PBKDF2(password: self.entropy, salt: salt, iterations: 2048, keyLength: 64, variant: HMAC.Variant.sha512).calculate()
     }
 }
 

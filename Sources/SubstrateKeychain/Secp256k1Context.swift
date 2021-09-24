@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CSecp256k1
+import Secp256k1Swift
 
 class Secp256k1Context {
     var context: OpaquePointer!
