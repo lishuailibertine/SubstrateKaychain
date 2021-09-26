@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Secp256k1Swift
+import CSecp256k1
 import BIP39swift
 import ScaleCodec
 
