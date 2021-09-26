@@ -24,7 +24,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SubstrateKeychain",
-            dependencies: ["Sr25519",.product(name: "Ed25519", package: "Sr25519"),"Secp256k1Swift","BIP39swift",.product(name: "ScaleCodec", package: "swift-scale-codec"),"xxHash-Swift","Blake2"]),
+            dependencies: ["Sr25519",.product(name: "Ed25519", package: "Sr25519"),.product(name: "CSecp256k1", package: "Secp256k1Swift"),"BIP39swift",.product(name: "ScaleCodec", package: "swift-scale-codec"),"xxHash-Swift","Blake2"]),
         .testTarget(
             name: "SubstrateKeychainTests",
             dependencies: ["SubstrateKeychain"]),
