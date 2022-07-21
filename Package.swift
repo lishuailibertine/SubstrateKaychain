@@ -12,7 +12,7 @@ let package = Package(
             targets: ["SubstrateKeychain"]),
     ],
     dependencies: [
-        .package(name:"Sr25519",url: "https://github.com/lishuailibertine/Sr25519.swift.git", from: "0.1.7"),
+        .package(name:"Sr25519",url: "https://github.com/lishuailibertine/Sr25519.swift.git", from: "0.1.9"),
         .package(name:"xxHash-Swift",url: "https://github.com/lishuailibertine/xxHash-Swift.git", from: "1.1.1"),
         .package(name:"Blake2",url: "https://github.com/tesseract-one/Blake2.swift.git", from: "0.1.2"),
         .package(name:"swift-scale-codec",url: "https://github.com/tesseract-one/swift-scale-codec.git", from: "0.2.0"),
