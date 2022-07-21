@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/mathwallet/Secp256k1Swift",
         "state": {
           "branch": null,
-          "revision": "ed7952370c5a181cce928e7541297a217b91cfa6",
-          "version": "1.2.0"
+          "revision": "318da87a951ba585a3b82a3c757e2f2ee0f8b9b7",
+          "version": "1.2.6"
         }
       },
       {
