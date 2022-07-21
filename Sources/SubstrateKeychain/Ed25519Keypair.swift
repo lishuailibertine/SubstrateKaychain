@@ -76,12 +76,14 @@ extension Ed25519KeyPair: KeyPair {
         }
         self.init(keyPair: kp)
     }
-    public init(secretkey: Data) throws{
+    
+    public init(secretKey: Data) throws {
         let kp = try Self.convertError {
-            try EDKeyPair(rawSk: secretkey)
+            try EDKeyPair(rawSk: secretKey)
         }
         self.init(keyPair: kp)
     }
+    
     public func sign(message: Data) -> Data {
         return keyPair.sign(message: message).raw
     }

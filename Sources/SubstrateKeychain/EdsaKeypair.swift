@@ -59,12 +59,14 @@ extension EcdsaKeyPair: KeyPair {
         }
         try self.init(privKey: Array(raw[0..<Secp256k1Context.privKeySize]))
     }
-    public init(secretkey: Data) throws{
-        guard secretkey.count == Secp256k1Context.privKeySize else {
+    
+    public init(secretKey: Data) throws {
+        guard secretKey.count == (Secp256k1Context.privKeySize) else {
             throw KeyPairError.native(error: .badPrivateKey)
         }
-        try self.init(privKey: Array(secretkey[0..<Secp256k1Context.privKeySize]))
+        try self.init(privKey: Array(secretKey))
     }
+    
     public init() {
         try! self.init(seed: Data(SubstrateKeychainRandom.bytes(count: Secp256k1Context.privKeySize)))
     }
