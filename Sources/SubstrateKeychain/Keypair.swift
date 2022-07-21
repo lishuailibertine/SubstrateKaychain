@@ -27,7 +27,7 @@ public protocol KeyPair {
     init(phrase: String, password: String?) throws
     init(seed: Data) throws
     init(raw: Data) throws
- 
+    init(secretkey: Data) throws
     func sign(message: Data) -> Data
     func verify(message: Data, signature: Data) -> Bool
     

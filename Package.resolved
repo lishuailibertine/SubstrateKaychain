@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/mathwallet/Secp256k1Swift",
         "state": {
           "branch": null,
-          "revision": "ed7952370c5a181cce928e7541297a217b91cfa6",
-          "version": "1.2.0"
+          "revision": "318da87a951ba585a3b82a3c757e2f2ee0f8b9b7",
+          "version": "1.2.6"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/lishuailibertine/Sr25519.swift.git",
         "state": {
           "branch": null,
-          "revision": "678f9454384273c468f65903faa76b8358a372ef",
-          "version": "0.1.6"
+          "revision": "19fee78b9834d197beb26dcba607f5be193531d7",
+          "version": "0.1.7"
         }
       },
       {

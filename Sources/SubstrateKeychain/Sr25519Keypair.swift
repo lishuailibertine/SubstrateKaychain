@@ -76,7 +76,12 @@ extension Sr25519KeyPair: KeyPair {
         }
         self.init(keyPair: kp)
     }
-    
+    public init(secretkey: Data) throws{
+        let kp = try Self.convertError {
+            try SRKeyPair(secretkey: Sr25519Secretkey(raw: secretkey))
+        }
+        self.init(keyPair: kp)
+    }
     public init() {
         try! self.init(seed: Data(SubstrateKeychainRandom.bytes(count: SRSeed.size)))
     }
