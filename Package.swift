@@ -15,7 +15,7 @@ let package = Package(
         .package(name:"Sr25519",url: "https://github.com/lishuailibertine/Sr25519.swift.git", from: "0.1.9"),
         .package(name:"xxHash-Swift",url: "https://github.com/daisuke-t-jp/xxHash-Swift", from: "1.1.1"),
         .package(name: "Blake2", url: "https://github.com/lishuailibertine/Blake2.swift", from: "0.1.3"),
-        .package(name:"swift-scale-codec",url: "https://github.com/tesseract-one/swift-scale-codec.git", from: "0.2.0"),
+        .package(name:"swift-scale-codec",url: "https://github.com/tesseract-one/swift-scale-codec.git", .exact("0.2.1")),
         .package(name:"BIP39swift", url: "https://github.com/mathwallet/BIP39swift", from: "1.0.0"),
         .package(name:"Secp256k1Swift", url: "https://github.com/mathwallet/Secp256k1Swift", from: "2.0.0")
     ],
